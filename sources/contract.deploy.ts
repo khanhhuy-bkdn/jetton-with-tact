@@ -1,5 +1,4 @@
 import { beginCell, contractAddress, toNano, TonClient4, WalletContractV4, internal, fromNano } from "@ton/ton";
-import { getHttpEndpoint } from "@orbs-network/ton-access";
 import { mnemonicToPrivateKey } from "ton-crypto";
 import { buildOnchainMetadata } from "./utils/jetton-helpers";
 
@@ -11,7 +10,6 @@ dotenv.config();
 
 (async () => {
     //create client for testnet sandboxv4 API - alternative endpoint
-    const endpoint = await getHttpEndpoint({ network: "testnet" });
     const client4 = new TonClient4({
         endpoint: "https://sandbox-v4.tonhubapi.com",
         // endpoint: "https://mainnet-v4.tonhubapi.com",
